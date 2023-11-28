@@ -6,7 +6,7 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 22:59:21 by lperez-h          #+#    #+#             */
-/*   Updated: 2023/11/28 00:28:38 by lperez-h         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:08:01 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ static void	handle_pixel(int x, int y, t_fractal *fractal)
 	z.real = 0.0;
 	z.complex = 0.0;
 	//pixel coordinate x(real) && y(complex) and scaled to fit mandel needs
-	c.real = map(x, -2, +2, 0, 799);
-	c.complex = map(y, +2, -2, 0, 799);
+	c.real = (map(x, -2, +2, 0, WIDTH) * fractal->zoom) + fractal->shift_x;
+	c.complex = (map(y, +2, -2, 0, HEIGHT) * fractal->zoom) + fractal->shift_y;
 	//how many times iterate z^2 + c to check if point scaped
 	while(i < fractal->iterations_definition)
 	{

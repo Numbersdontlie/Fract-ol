@@ -6,7 +6,7 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:05:55 by lperez-h          #+#    #+#             */
-/*   Updated: 2023/11/28 00:28:35 by lperez-h         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:05:31 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <unistd.h>
 # include <math.h>
 # include "minilibx-linux/mlx.h"
+# include <X11/X.h>
+# include <X11/keysym.h>
 
 #define ERROR_MESSAGE "Please enrer \n\t"./fractol maldelbrot\" or \n\t./fractol julia <value 1> <value 2>""
 #define WIDTH 800
@@ -60,6 +62,9 @@ typedef struct s_fractal
 	t_image	img;
 	double	escape_value;
 	int		iterations_definition;
+	double	shift_x;
+	double	shift_y;
+	double	zoom;
 }	t_fractal;
 
 
@@ -71,6 +76,8 @@ double		map(double num, double new_min, double new_max, double old_min, double o
 t_complex	sum_complex(t_complex z1, t_complex z2);
 t_complex	square_complex(t_complex z);
 void		fractal_render(t_fractal *fractal);
+int			key_handle(int keysym, t_fractal *fractal);
+int			close_handle(t_fractal *fractal);
 
 
 
