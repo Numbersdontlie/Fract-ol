@@ -6,7 +6,7 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:05:55 by lperez-h          #+#    #+#             */
-/*   Updated: 2023/11/28 16:05:31 by lperez-h         ###   ########.fr       */
+/*   Updated: 2023/11/30 11:28:05 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ typedef struct s_fractal
 	double	shift_x;
 	double	shift_y;
 	double	zoom;
+	double	julia_x;
+	double	julia_y;
 }	t_fractal;
 
 
@@ -78,7 +80,9 @@ t_complex	square_complex(t_complex z);
 void		fractal_render(t_fractal *fractal);
 int			key_handle(int keysym, t_fractal *fractal);
 int			close_handle(t_fractal *fractal);
-
+double		atodbl(char *s);
+int			mouse_handle(int button, int x, int y, t_fractal *fractal);
+int			julia_track(int x, int y, t_fractal *fractal);
 
 
 
