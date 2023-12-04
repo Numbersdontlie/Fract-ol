@@ -6,7 +6,7 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:05:55 by lperez-h          #+#    #+#             */
-/*   Updated: 2023/11/30 11:28:05 by lperez-h         ###   ########.fr       */
+/*   Updated: 2023/12/04 13:44:24 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <X11/X.h>
 # include <X11/keysym.h>
 
-#define ERROR_MESSAGE "Please enrer \n\t"./fractol maldelbrot\" or \n\t./fractol julia <value 1> <value 2>""
+#define ERROR_MESSAGE "Please enrer \n\t"./fractol maldelbrot\" or \n\t./fractol julia <value 1> <value 2>"
 #define WIDTH 800
 #define HEIGHT 800
 
