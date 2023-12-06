@@ -1,16 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_utils.c                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:12:33 by lperez-h          #+#    #+#             */
-/*   Updated: 2023/11/30 10:54:31 by lperez-h         ###   ########.fr       */
+/*   Updated: 2023/12/06 14:17:34 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "fractol.h"
+
+//[0..799]->[-2..+2]
+double	map(double num, double new_min, double new_max, double old_min, double old_max)
+{
+	return (new_max - new_min) * (num - old_min) / (old_max - old_min) + new_min;
+}
+
+t_complex	sum_complex(t_complex z1, t_complex z2)
+{
+	t_complex	result;
+
+	result.real = z1.real + z2.real;
+	result.complex = z1.complex + z2.complex;
+	return (result);
+}
+
+t_complex	square_complex(t_complex z)
+{
+	t_complex	result;
+
+	result.real = (z.real * z.real) - (z.complex * z.complex);
+	result.complex = 2 * z.real * z.complex;
+	return (result);
+}
 
 int	ft_strncmp(char *s1, char *s2, int n)
 {

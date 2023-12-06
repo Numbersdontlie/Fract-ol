@@ -6,7 +6,7 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:05:55 by lperez-h          #+#    #+#             */
-/*   Updated: 2023/12/04 13:44:24 by lperez-h         ###   ########.fr       */
+/*   Updated: 2023/12/06 14:19:56 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,25 @@
 #define WIDTH 800
 #define HEIGHT 800
 
+#define XK_Escape 0xff1b
+#define XK_Left 0xff51
+#define XK_Up 0xff52
+#define XK_Right 0xff53
+#define XK_Down 0xff54
+#define XK_Plus 0xffab
+#define XK_Minus 0xffad
+
 #define BLACK 0x000000
-#define WHITE 0xFFFFFF
-#define RED 0xFF0000
-#define GREEN 0x00FF00
+//#define WHITE 0xFFFFFF
+//#define RED 0xFF0000
+//#define GREEN 0x00FF00
 #define BLUE 0x0000FF
 #define MAGENTA_BURST 0xFF00FF
 #define LIME_SHOCK 0xCCFF00
 #define NEON_ORANGE 0xFF6600
 #define PSYCHEDELIC_PURPLE 0x660866
-#define AQUA_DREAM 0x33CCCC
-#define HOT_PINK 0xFF66B2
+//#define AQUA_DREAM 0x33CCCC
+//#define HOT_PINK 0xFF66B2
 #define ELECTRIC_BLUE 0x0066FF
 #define LAVA_RED 0xFF3300
 
@@ -83,8 +91,5 @@ int			close_handle(t_fractal *fractal);
 double		atodbl(char *s);
 int			mouse_handle(int button, int x, int y, t_fractal *fractal);
 int			julia_track(int x, int y, t_fractal *fractal);
-
-
-
 
 #endif
