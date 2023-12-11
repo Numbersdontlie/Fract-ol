@@ -6,7 +6,7 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 22:59:21 by lperez-h          #+#    #+#             */
-/*   Updated: 2023/12/06 14:17:44 by lperez-h         ###   ########.fr       */
+/*   Updated: 2023/12/11 11:56:32 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void	handle_pixel(int x, int y, t_fractal *fractal)
 		z = sum_complex(square_complex(z), c);
 		if((z.real * z.real) + (z.complex * z.complex) > fractal->escape_value)
 		{
-			color = map(i, BLACK, WHITE, 0, fractal->iterations_definition);
+			color = map(i, BLACK, LIME_SHOCK, 0, fractal->iterations_definition);
 			my_pixel_put(x, y, &fractal->img, color);
 			return ;
  		}
@@ -73,5 +73,5 @@ void	fractal_render(t_fractal *fractal)
 		while(++x < WIDTH)
 			handle_pixel(x, y, fractal);
 	}
-	mlx_put_image_to_window(fractal->mlx_connection, fractal->mlx_window, fractal->img, 0, 0);
+	mlx_put_image_to_window(fractal->mlx_connection, fractal->mlx_window, fractal->img.image_ptr, 0, 0);
 }

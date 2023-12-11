@@ -6,7 +6,7 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 16:15:38 by lperez-h          #+#    #+#             */
-/*   Updated: 2023/11/28 16:07:00 by lperez-h         ###   ########.fr       */
+/*   Updated: 2023/12/11 11:46:05 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,15 @@ void	fractal_init(t_fractal *fractal)
 		free(fractal->mlx_connection);
 		malloc_error();
 	}
-	fractal->img.img_ptr = mlx_new_image(fractal->mlx_connection, WIDTH, HEIGHT);
-	if (fractal->img.img_ptr == NULL)
+	fractal->img.image_ptr = mlx_new_image(fractal->mlx_connection, WIDTH, HEIGHT);
+	if (fractal->img.image_ptr == NULL)
 	{
 		mlx_destroy_window(fractal->mlx_connection, fractal->mlx_window);
 		mlx_destroy_display(fractal->mlx_connection);
 		free(fractal->mlx_connection);
 		malloc_error();
 	}
-	fractal->img.pixels_ptr = mlx_get_data_addr(fractal->img.img_ptr, &fractal->img.bpp, &fractal->img.line_len, &fractal->img.endian);
+	fractal->img.pixels_ptr = mlx_get_data_addr(fractal->img.image_ptr, &fractal->img.bpp, &fractal->img.line_len, &fractal->img.endian);
 	events_init(fractal);
 	data_init(fractal);
 }
