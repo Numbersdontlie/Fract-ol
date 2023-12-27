@@ -6,12 +6,12 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:52:06 by lperez-h          #+#    #+#             */
-/*   Updated: 2023/12/11 14:33:07 by lperez-h         ###   ########.fr       */
+/*   Updated: 2023/12/27 13:43:19 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "fractol.h"
-# include "minilibx-linux/mlx.h"
+#include "fractol.h"
+#include "minilibx-linux/mlx.h"
 
 int	main(int argc, char **argv)
 {
@@ -21,9 +21,14 @@ int	main(int argc, char **argv)
 		|| ((argc == 4) && (!ft_strncmp(argv[1], "julia", 5))))
 	{
 		fractal.name = argv[1];
-		//Input is correct and I can launch the app
+		if (!ft_strncmp(fractal.name, "julia", 5))
+		{
+			fractal.julia_x = atodbl(argv[2]);
+			fractal.julia_y = atodbl(argv[3]);
+		}
 		fractal_init(&fractal);
-		fractal_render(&fractal);
+		define_fractal(&fractal, fractal.name);
+		//fractal_render(&fractal);
 		mlx_loop(fractal.mlx_connection);
 	}
 	else
@@ -32,3 +37,4 @@ int	main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 }
+s

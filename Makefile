@@ -1,6 +1,6 @@
 NAME = fractol
 
-SRCS = events.c init.c main.c render.c utils.c
+SRCS = events.c init.c main.c utils.c mandelbrot.c julia.c
 
 OBJS = ${SRCS:.c=.o}
 

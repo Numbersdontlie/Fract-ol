@@ -6,11 +6,11 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 16:15:38 by lperez-h          #+#    #+#             */
-/*   Updated: 2023/12/11 11:46:05 by lperez-h         ###   ########.fr       */
+/*   Updated: 2023/12/27 13:08:01 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "fractol.h"
+#include "fractol.h"
 
 static void	malloc_error(void)
 {
@@ -23,7 +23,7 @@ static void	data_init(t_fractal *fractal)
 	fractal->escape_value = 4;
 	fractal->iterations_definition = 42;
 	fractal->shift_x = 0.0;
-	fractal->shift_x = 0.0;
+	fractal->shift_y = 0.0;
 	fractal->zoom = 1.0;
 }
 
@@ -46,15 +46,15 @@ void	fractal_init(t_fractal *fractal)
 		free(fractal->mlx_connection);
 		malloc_error();
 	}
-	fractal->img.image_ptr = mlx_new_image(fractal->mlx_connection, WIDTH, HEIGHT);
-	if (fractal->img.image_ptr == NULL)
+	fractal->img = mlx_new_image(fractal->mlx_connection, WIDTH, HEIGHT);
+	if (fractal->img == NULL)
 	{
 		mlx_destroy_window(fractal->mlx_connection, fractal->mlx_window);
 		mlx_destroy_display(fractal->mlx_connection);
 		free(fractal->mlx_connection);
 		malloc_error();
 	}
-	fractal->img.pixels_ptr = mlx_get_data_addr(fractal->img.image_ptr, &fractal->img.bpp, &fractal->img.line_len, &fractal->img.endian);
+	fractal->pixels_ptr = mlx_get_data_addr(fractal->img, &fractal->bpp, &fractal->line_len, &fractal->endian);
 	events_init(fractal);
 	data_init(fractal);
 }
