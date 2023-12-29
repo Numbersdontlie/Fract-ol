@@ -6,17 +6,17 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:12:33 by lperez-h          #+#    #+#             */
-/*   Updated: 2023/12/27 13:11:06 by lperez-h         ###   ########.fr       */
+/*   Updated: 2023/12/29 12:39:22 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
 //[0..799]->[-2..+2]
-double	map(double num, double new_min, double new_max, double old_min, double old_max)
+/*double	map(double num, double new_min, double new_max, double old_min, double old_max)
 {
 	return ((new_max - new_min) * (num - old_min) / (old_max - old_min) + new_min);
-}
+}*/
 
 int	ft_strncmp(char *s1, char *s2, int n)
 {
@@ -97,9 +97,9 @@ double	atodbl(char *s)
 
 void	define_fractal(t_fractal *fractal, char *name)
 {
-	if (ft_strncmp(name, "mandelbrot", 7) == 0)
+	if (ft_strncmp(name, "mandelbrot", 11) == 0)
 		put_mandelbrot(fractal);
-	else if (ft_strncmp(name, "julia", 5) == 0)
+	else if (ft_strncmp(name, "julia", 6) == 0)
 		put_julia(fractal);
 	//else if (ft_strncmp(name, "ship", 4) == 0)
 	//	put_ship(fractal); //ToDo
@@ -107,8 +107,10 @@ void	define_fractal(t_fractal *fractal, char *name)
 
 void	my_pixel_put(int x, int y, t_fractal *fractal, int color)
 {
-	int	offset;
+	int		offset;
+	char	*temp;
 
 	offset = (y * fractal->line_len) + (x * (fractal->bpp / 8));
-	*(unsigned int *)(fractal->pixels_ptr + offset) = color;
+	temp = fractal->pixels_ptr + offset;
+	*(unsigned int *)temp = color;
 }

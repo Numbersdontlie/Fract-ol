@@ -6,7 +6,7 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:24:52 by lperez-h          #+#    #+#             */
-/*   Updated: 2023/12/27 13:03:38 by lperez-h         ###   ########.fr       */
+/*   Updated: 2023/12/29 12:07:40 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,23 @@ int	key_handle(int keysym, t_fractal *fractal)
 	if (keysym == XK_ESCAPE)
 		close_handle(fractal);
 	else if (keysym == XK_LEFT)
-		fractal->shift_x += (0.3 * fractal->zoom);
+		fractal->shift_x += (0.25 * fractal->zoom);
 	else if (keysym == XK_RIGHT)
-		fractal->shift_x -= (0.3 * fractal->zoom);
+		fractal->shift_x -= (0.25 * fractal->zoom);
 	else if (keysym == XK_UP)
-		fractal->shift_y -= (0.3 * fractal->zoom);
+		fractal->shift_y -= (0.25 * fractal->zoom);
 	else if (keysym == XK_DOWN)
-		fractal->shift_y += (0.3 * fractal->zoom);
+		fractal->shift_y += (0.25 * fractal->zoom);
 	else if (keysym == XK_PLUS)
 		fractal->iterations_definition += 10;
 	else if (keysym == XK_MINUS)
 		fractal->iterations_definition -= 10;
+	else if (keysym == CHANGE)
+		fractal->color += 0xFFFFFF / 100;
+	else if (keysym == BACK)
+		fractal->color -= 0xFFFFFF / 100;
+	else if (keysym == PSYCHO)
+		fractal->color += MAGENTA_BURST;
 	define_fractal(fractal, fractal->name);
 	return (0);
 }

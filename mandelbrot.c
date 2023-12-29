@@ -6,7 +6,7 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 11:36:39 by lperez-h          #+#    #+#             */
-/*   Updated: 2023/12/27 13:14:13 by lperez-h         ###   ########.fr       */
+/*   Updated: 2023/12/29 14:24:28 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,19 @@ static void	mandel_numbers(int x, int y, t_fractal *fractal)
 	double		temp;
 	int			i;
 
-	z.real = 0.0;
-	z.complex = 0.0;
-	c.real = x / RATIO * fractal->zoom + fractal->shift_x;
-	c.complex = -y / RATIO * fractal->zoom + fractal->shift_y;
+	z.x = 0.0;
+	z.y = 0.0;
+	c.x = x / RATIO * fractal->zoom + fractal->shift_x;
+	c.y = -y / RATIO * fractal->zoom + fractal->shift_y;
 	i = 0;
 	while (i++ < fractal->iterations_definition)
 	{
-		temp = z.real * z.real - z.complex * z.complex + c.real;
-		z.complex = 2 * z.real * z.complex + c.complex;
-		z.real = temp;
-		if (z.real * z.real + z.complex * z.complex > fractal->escape_value)
+		temp = z.x * z.x - z.y * z.y + c.x;
+		z.y = 2 * z.x * z.y + c.y;
+		z.x = temp;
+		if (z.x * z.x + z.y * z.y > fractal->escape_value)
 		{
-			my_pixel_put(x, y, fractal, fractal->color * (1 % 256));
+			my_pixel_put(x, y, fractal, fractal->color * (i % 256));
 			return ;
 		}
 	}

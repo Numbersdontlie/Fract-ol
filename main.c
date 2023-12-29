@@ -6,7 +6,7 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:52:06 by lperez-h          #+#    #+#             */
-/*   Updated: 2023/12/27 13:43:19 by lperez-h         ###   ########.fr       */
+/*   Updated: 2023/12/29 16:27:08 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,3 @@ int	main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 }
-s

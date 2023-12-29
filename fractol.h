@@ -6,7 +6,7 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:05:55 by lperez-h          #+#    #+#             */
-/*   Updated: 2023/12/27 13:10:57 by lperez-h         ###   ########.fr       */
+/*   Updated: 2023/12/29 12:18:53 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@
 # define MOUSE_BTN_2 3
 # define PSYCHO 112
 # define BACK 98
+# define CHANGE 99
 
 # define BLACK 0x000000
 # define BLUE 0x0000FF
@@ -59,8 +60,8 @@
 
 typedef struct s_complex
 {
-	double	real;
-	double	complex;
+	double	x;
+	double	y;
 }	t_complex;
 
 typedef struct s_fractal

@@ -6,7 +6,7 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 16:15:38 by lperez-h          #+#    #+#             */
-/*   Updated: 2023/12/27 13:08:01 by lperez-h         ###   ########.fr       */
+/*   Updated: 2023/12/29 16:29:37 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ static void	data_init(t_fractal *fractal)
 {
 	fractal->escape_value = 4;
 	fractal->iterations_definition = 42;
-	fractal->shift_x = 0.0;
-	fractal->shift_y = 0.0;
+	fractal->shift_x = -2;
+	fractal->shift_y = 2;
 	fractal->zoom = 1.0;
+	fractal->color = ELECTRIC_BLUE;
+	fractal->left_click = 0;
 }
 
 static void	events_init(t_fractal *fractal)
