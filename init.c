@@ -6,7 +6,7 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 16:15:38 by lperez-h          #+#    #+#             */
-/*   Updated: 2023/12/29 16:29:37 by lperez-h         ###   ########.fr       */
+/*   Updated: 2024/01/03 14:38:04 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	malloc_error(void)
 
 static void	data_init(t_fractal *fractal)
 {
-	fractal->escape_value = 4;
+	fractal->escape_value = 4.0;
 	fractal->iterations_definition = 42;
 	fractal->shift_x = -2;
 	fractal->shift_y = 2;

@@ -6,7 +6,7 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:24:52 by lperez-h          #+#    #+#             */
-/*   Updated: 2023/12/29 12:07:40 by lperez-h         ###   ########.fr       */
+/*   Updated: 2024/01/03 14:50:05 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	key_handle(int keysym, t_fractal *fractal)
 
 int	julia_follow(int x, int y, t_fractal *fractal)
 {
-	if (fractal->left_click == 1 && ft_strncmp(fractal->name, "julia", 5) == 0)
+	if (fractal->left_click == 1 && ft_strncmp(fractal->name, "julia", 6) == 0)
 	{
 		fractal->julia_x = x / RATIO * fractal->zoom + fractal->shift_x;
 		fractal->julia_y = -y / RATIO * fractal->zoom + fractal->shift_y;
